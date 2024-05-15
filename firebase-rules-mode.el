@@ -35,7 +35,7 @@
 ;;; Code:
 
 (defvar firebase-rules-mode-highlights
-  (let ((keywords '("rules_version" "service" "match" "allow"))
+  (let ((keywords '("rules_version" "service" "match" "allow" "true" "false"))
         )
     `((,(regexp-opt keywords 'words) . font-lock-keyword-face))
     )
@@ -45,7 +45,6 @@
   (let ((table (copy-syntax-table
 		(standard-syntax-table))))
     (modify-syntax-entry ?/ ". 124" table)
-    (modify-syntax-entry ?* ". 23b" table)
     (modify-syntax-entry ?\r "> " table)
     (modify-syntax-entry ?\n "> " table)
     table))
