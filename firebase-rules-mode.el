@@ -35,9 +35,13 @@
 ;;; Code:
 
 (defvar firebase-rules-mode-highlights
-  (let ((keywords '("rules_version" "service" "match" "allow" "true" "false"))
+  (let ((keywords '("allow" "false" "if" "match" "rules_version" "service" "true"))
+        (builtins '("create" "delete" "get" "list" "read" "update" "write"))
         )
-    `((,(regexp-opt keywords 'words) . font-lock-keyword-face))
+
+    `((,(regexp-opt keywords 'words) . font-lock-keyword-face)
+      (,(regexp-opt builtins 'words) . font-lock-builtin-face))
+
     )
   )
 
