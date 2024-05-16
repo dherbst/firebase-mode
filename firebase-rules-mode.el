@@ -1,7 +1,7 @@
 ;;; firebase-rules-mode.el --- Editing support for firebase.rules -*- lexical-binding: t; -*-
 
 ;; Author: Darrel Herbst <dherbst@gmail.com>
-;; URL: https://github.com/dherbst/firebase-mode
+;; URL: https://github.com/dherbst/firebase-rules-mode
 ;; Version: 1.0
 ;; Keywords: languages
 ;; Package-Requires: ((emacs "24.3"))
@@ -36,14 +36,10 @@
 
 (defvar firebase-rules-mode-highlights
   (let ((keywords '("allow" "false" "if" "match" "rules_version" "service" "true"))
-        (builtins '("create" "delete" "get" "list" "read" "update" "write"))
-        )
+        (builtins '("create" "delete" "get" "list" "read" "update" "write")))
 
     `((,(regexp-opt keywords 'words) . font-lock-keyword-face)
-      (,(regexp-opt builtins 'words) . font-lock-builtin-face))
-
-    )
-  )
+      (,(regexp-opt builtins 'words) . font-lock-builtin-face))))
 
 (defvar firebase-rules-mode-syntax-table
   (let ((table (copy-syntax-table
@@ -60,8 +56,7 @@
   (set-syntax-table firebase-rules-mode-syntax-table)
   (setq-local comment-start "//")
   (setq-local comment-use-syntax t)
-  (setq font-lock-defaults '(firebase-rules-mode-highlights))
-  )
+  (setq font-lock-defaults '(firebase-rules-mode-highlights)))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist
