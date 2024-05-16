@@ -1,1 +1,1 @@
-# firebase-mode
+# firebase-rules-mode
