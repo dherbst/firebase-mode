@@ -23,7 +23,10 @@
 
 ;;; Commentary:
 
-;; Provides syntax highlighting for Firebase security rules files https://firebase.google.com/docs/rules/basics
+;; Provides syntax highlighting for Firebase security rules files version 2,
+;; cloud firestore and cloud storage only.  The rules language is documented at
+;; https://firebase.google.com/docs/rules/rules-language.  Indention and
+;; grammar validation is not currently provided, contributions are welcome.
 
 ;;; Code:
 
@@ -41,7 +44,6 @@
     (modify-syntax-entry ?\r "> " table)
     (modify-syntax-entry ?\n "> " table)
     table))
-
 
 ;;;###autoload
 (define-derived-mode firebase-rules-mode fundamental-mode "Firebase-Rules"
